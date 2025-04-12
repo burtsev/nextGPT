@@ -30,6 +30,7 @@ class CausalSelfAttention(nn.Module):
 
     def __init__(self, config):
         super().__init__()
+        print(f"n_embd: {config.n_embd}, n_head: {config.n_head}")
         assert config.n_embd % config.n_head == 0
         # key, query, value projections for all heads, but in a batch
         self.c_attn = nn.Linear(config.n_embd, 3 * config.n_embd, bias=config.bias)
@@ -105,6 +106,54 @@ class Block(nn.Module):
         x = x + self.mlp(self.ln_2(x))
         return x
 
+class CortexBlock(nn.Module):
+    """
+    A block that splits the embedding dimension into two streams, applies MHA and FFN separately, and then concatenates the streams back together.
+    """
+    def __init__(self, config):
+        super().__init__()
+        # Ensure n_embd is divisible by 2
+        assert config.n_embd % 2 == 0, "Embedding dimension must be divisible by 2"
+        print(f">>>>>>> CortexBlock: n_embd: {config.n_embd}, n_head: {config.n_head}")
+        
+        # Split the embedding dimension for two streams
+        self.split_dim = config.n_embd // 2
+        # Create separate configurations for s1 and s2
+        config_s1 = GPTConfig(**vars(config))  # Create a copy of the config
+        config_s2 = GPTConfig(**vars(config))  # Create another copy of the config
+        
+        # Adjust n_head for each stream
+        config_s1.n_head = config.n_head // 2
+        config_s2.n_head = config.n_head // 2
+        
+        # Adjust n_embd for each stream
+        config_s1.n_embd = self.split_dim
+        config_s2.n_embd = self.split_dim
+        
+        # Initialize two Blocks for s1 and s2
+        self.block_s1 = Block(config_s1)
+        self.block_s2 = Block(config_s2)
+        
+        # Mixing FFN for s1 and s2
+        self.mixing_ffn_s1 = nn.Linear(config.n_embd, self.split_dim)
+        self.mixing_ffn_s2 = nn.Linear(config.n_embd, self.split_dim)
+
+    def forward(self, x):
+        # Step 1: Split x into s1 and s2
+        s1, s2 = x.split(self.split_dim, dim=-1)
+        
+        # Step 2: Apply MHA + FFN separately
+        s1 = s1 + self.block_s1(s1)
+        s2 = s2 + self.block_s2(s2)
+        
+        # Step 3: Concatenate and Apply FFN separately
+        s = torch.cat((s1, s2), dim=-1)
+        s1 = s1 + self.mixing_ffn_s1(s)
+        s2 = s2 + self.mixing_ffn_s2(s)
+        
+        # Concatenate streams back
+        return torch.cat((s1, s2), dim=-1)
+
 @dataclass
 class GPTConfig:
     block_size: int = 1024
@@ -114,6 +163,8 @@ class GPTConfig:
     n_embd: int = 768
     dropout: float = 0.0
     bias: bool = True # True: bias in Linears and LayerNorms, like GPT-2. False: a bit better and faster
+    block_type: str = 'default' # 'default' for Block, 'cortex' for CortexBlock, 'cortex_x' for weakly coupled CortexBlock
+    split_dim: int = None # Used for CortexBlock and cortex_x modes, automatically set to n_embd//2 if None
 
 class GPT(nn.Module):
 
@@ -122,12 +173,28 @@ class GPT(nn.Module):
         assert config.vocab_size is not None
         assert config.block_size is not None
         self.config = config
+        
+        print(f"GPT init called with block_type: {config.block_type}, n_embd: {config.n_embd}, n_head: {config.n_head}")
+        
+        # If split_dim is None and we're using a cortex block type, set it to n_embd//2
+        if config.split_dim is None and config.block_type in ['cortex', 'cortex_x']:
+            self.config.split_dim = config.n_embd // 2
+            print(f"Setting split_dim to {self.config.split_dim}")
+            
+        # Layers for cortex_x mode
+        if config.block_type == 'cortex_x':
+            print("Initializing cortex_x layers")
+            self.t_emb_proj = nn.Linear(config.n_embd, self.config.split_dim)
+            self.s_emb = nn.Parameter(torch.randn(1, 1, self.config.split_dim))
+            self.x_out_proj = nn.Linear(self.config.split_dim, config.n_embd)
 
+        print(f"Creating transformer with block_type: {config.block_type}")
         self.transformer = nn.ModuleDict(dict(
             wte = nn.Embedding(config.vocab_size, config.n_embd),
             wpe = nn.Embedding(config.block_size, config.n_embd),
             drop = nn.Dropout(config.dropout),
-            h = nn.ModuleList([Block(config) for _ in range(config.n_layer)]),
+            h = nn.ModuleList([Block(config) if config.block_type == 'default' 
+                              else CortexBlock(config) for _ in range(config.n_layer)]),
             ln_f = LayerNorm(config.n_embd, bias=config.bias),
         ))
         self.lm_head = nn.Linear(config.n_embd, config.vocab_size, bias=False)
@@ -177,9 +244,18 @@ class GPT(nn.Module):
         tok_emb = self.transformer.wte(idx) # token embeddings of shape (b, t, n_embd)
         pos_emb = self.transformer.wpe(pos) # position embeddings of shape (t, n_embd)
         x = self.transformer.drop(tok_emb + pos_emb)
+        if self.config.block_type == 'cortex_x':
+            t_emb = self.t_emb_proj(x)
+            # Broadcast s_emb to match batch size
+            batch_size = x.size(0)
+            s_emb = self.s_emb.expand(batch_size, x.size(1), -1)
+            x = torch.cat((t_emb, s_emb), dim=-1)
         for block in self.transformer.h:
             x = block(x)
         x = self.transformer.ln_f(x)
+        if self.config.block_type == 'cortex_x':
+            x, _ = x.split(self.config.split_dim, dim=-1)  # split along embedding dim and keep first half
+            x = self.x_out_proj(x)
 
         if targets is not None:
             # if we are given some desired targets also calculate the loss
