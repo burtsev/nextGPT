@@ -1,0 +1,64 @@
+step 0: train loss 10.9886, val loss 10.9897
+iter 0: loss 10.9768, time 32104.73ms, mfu -100.00%
+iter 10: loss 10.3769, time 31.15ms, mfu 108.07%
+iter 20: loss 9.7565, time 31.58ms, mfu 107.93%
+iter 30: loss 9.5606, time 31.74ms, mfu 107.74%
+iter 40: loss 9.3430, time 31.62ms, mfu 107.61%
+iter 50: loss 9.1386, time 31.44ms, mfu 107.56%
+iter 60: loss 8.9981, time 31.57ms, mfu 107.47%
+iter 70: loss 8.9185, time 31.68ms, mfu 107.35%
+iter 80: loss 8.6262, time 31.71ms, mfu 107.23%
+iter 90: loss 8.5274, time 31.79ms, mfu 107.10%
+iter 100: loss 8.3488, time 50.81ms, mfu 103.01%
+iter 110: loss 8.1138, time 31.67ms, mfu 103.34%
+iter 120: loss 7.9256, time 31.74ms, mfu 103.61%
+iter 130: loss 7.6150, time 31.76ms, mfu 103.85%
+iter 140: loss 7.5772, time 31.81ms, mfu 104.05%
+iter 150: loss 7.3982, time 31.68ms, mfu 104.27%
+iter 160: loss 7.0986, time 31.81ms, mfu 104.43%
+iter 170: loss 7.0547, time 31.63ms, mfu 104.63%
+iter 180: loss 6.9702, time 31.76ms, mfu 104.76%
+iter 190: loss 7.0061, time 31.77ms, mfu 104.89%
+iter 200: loss 7.0474, time 50.91ms, mfu 101.01%
+iter 210: loss 6.8205, time 31.72ms, mfu 101.52%
+iter 220: loss 6.9521, time 31.68ms, mfu 102.00%
+iter 230: loss 7.0872, time 31.82ms, mfu 102.38%
+iter 240: loss 6.7524, time 31.85ms, mfu 102.71%
+iter 250: loss 6.7640, time 31.76ms, mfu 103.04%
+iter 260: loss 6.5130, time 31.86ms, mfu 103.30%
+iter 270: loss 6.8013, time 31.73ms, mfu 103.58%
+iter 280: loss 6.5678, time 31.80ms, mfu 103.81%
+iter 290: loss 6.6927, time 31.94ms, mfu 103.97%
+iter 300: loss 6.4464, time 51.43ms, mfu 100.12%
+iter 310: loss 7.4193, time 31.79ms, mfu 100.70%
+iter 320: loss 6.5716, time 31.81ms, mfu 101.21%
+iter 330: loss 6.5067, time 31.84ms, mfu 101.66%
+iter 340: loss 6.5662, time 31.88ms, mfu 102.05%
+iter 350: loss 6.6541, time 31.91ms, mfu 102.40%
+iter 360: loss 6.4759, time 31.76ms, mfu 102.76%
+iter 370: loss 6.3152, time 31.81ms, mfu 103.07%
+iter 380: loss 6.3601, time 31.70ms, mfu 103.38%
+iter 390: loss 6.3862, time 31.75ms, mfu 103.64%
+iter 400: loss 6.7343, time 51.39ms, mfu 99.83%
+iter 410: loss 6.5518, time 31.91ms, mfu 100.40%
+iter 420: loss 6.4714, time 31.73ms, mfu 100.97%
+Traceback (most recent call last):
+  File "/home/mburtsev/nextGPT/train.py", line 312, in <module>
+    scaler.scale(loss).backward()
+  File "/home/mburtsev/.local/lib/python3.10/site-packages/torch/_tensor.py", line 626, in backward
+    torch.autograd.backward(
+  File "/home/mburtsev/.local/lib/python3.10/site-packages/torch/autograd/__init__.py", line 347, in backward
+    _engine_run_backward(
+  File "/home/mburtsev/.local/lib/python3.10/site-packages/torch/autograd/graph.py", line 823, in _engine_run_backward
+    return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+KeyboardInterrupt
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/home/mburtsev/nextGPT/train.py", line 312, in <module>
+[rank0]:     scaler.scale(loss).backward()
+[rank0]:   File "/home/mburtsev/.local/lib/python3.10/site-packages/torch/_tensor.py", line 626, in backward
+[rank0]:     torch.autograd.backward(
+[rank0]:   File "/home/mburtsev/.local/lib/python3.10/site-packages/torch/autograd/__init__.py", line 347, in backward
+[rank0]:     _engine_run_backward(
+[rank0]:   File "/home/mburtsev/.local/lib/python3.10/site-packages/torch/autograd/graph.py", line 823, in _engine_run_backward
+[rank0]:     return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+[rank0]: KeyboardInterrupt

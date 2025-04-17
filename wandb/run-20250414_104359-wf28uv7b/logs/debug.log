@@ -1,0 +1,23 @@
+2025-04-14 10:43:59,154 INFO    MainThread:83349 [wandb_setup.py:_flush():67] Current SDK version is 0.19.9
+2025-04-14 10:43:59,155 INFO    MainThread:83349 [wandb_setup.py:_flush():67] Configure stats pid to 83349
+2025-04-14 10:43:59,155 INFO    MainThread:83349 [wandb_setup.py:_flush():67] Loading settings from /home/mburtsev/.config/wandb/settings
+2025-04-14 10:43:59,155 INFO    MainThread:83349 [wandb_setup.py:_flush():67] Loading settings from /home/mburtsev/nextGPT/wandb/settings
+2025-04-14 10:43:59,155 INFO    MainThread:83349 [wandb_setup.py:_flush():67] Loading settings from environment variables
+2025-04-14 10:43:59,155 INFO    MainThread:83349 [wandb_init.py:setup_run_log_directory():662] Logging user logs to /home/mburtsev/nextGPT/wandb/run-20250414_104359-wf28uv7b/logs/debug.log
+2025-04-14 10:43:59,155 INFO    MainThread:83349 [wandb_init.py:setup_run_log_directory():663] Logging internal logs to /home/mburtsev/nextGPT/wandb/run-20250414_104359-wf28uv7b/logs/debug-internal.log
+2025-04-14 10:43:59,155 INFO    MainThread:83349 [wandb_init.py:init():781] calling init triggers
+2025-04-14 10:43:59,155 INFO    MainThread:83349 [wandb_init.py:init():786] wandb.init called with sweep_config: {}
+config: {'out_dir': 'out', 'eval_interval': 1000, 'log_interval': 10, 'eval_iters': 200, 'eval_only': False, 'always_save_checkpoint': True, 'init_from': 'scratch', 'wandb_log': True, 'wandb_project': 'nextGPT-OWT', 'wandb_run_name': 'CTXX-d900-gpt2-124M', 'dataset': 'openwebtext', 'gradient_accumulation_steps': 5, 'batch_size': 96, 'block_size': 1024, 'n_layer': 12, 'n_head': 12, 'n_embd': 900, 'dropout': 0.0, 'bias': False, 'learning_rate': 0.0006, 'max_iters': 600000, 'weight_decay': 0.1, 'beta1': 0.9, 'beta2': 0.95, 'grad_clip': 1.0, 'decay_lr': True, 'warmup_iters': 2000, 'lr_decay_iters': 600000, 'min_lr': 6e-05, 'backend': 'nccl', 'device': 'cuda', 'dtype': 'bfloat16', 'compile': True, '_wandb': {}}
+2025-04-14 10:43:59,155 INFO    MainThread:83349 [wandb_init.py:init():809] starting backend
+2025-04-14 10:43:59,155 INFO    MainThread:83349 [wandb_init.py:init():813] sending inform_init request
+2025-04-14 10:43:59,158 INFO    MainThread:83349 [backend.py:_multiprocessing_setup():101] multiprocessing start_methods=fork,spawn,forkserver, using: spawn
+2025-04-14 10:43:59,158 INFO    MainThread:83349 [wandb_init.py:init():823] backend started and connected
+2025-04-14 10:43:59,159 INFO    MainThread:83349 [wandb_init.py:init():915] updated telemetry
+2025-04-14 10:43:59,188 INFO    MainThread:83349 [wandb_init.py:init():939] communicating run to backend with 90.0 second timeout
+2025-04-14 10:43:59,629 INFO    MainThread:83349 [wandb_init.py:init():1014] starting run threads in backend
+2025-04-14 10:43:59,725 INFO    MainThread:83349 [wandb_run.py:_console_start():2454] atexit reg
+2025-04-14 10:43:59,725 INFO    MainThread:83349 [wandb_run.py:_redirect():2306] redirect: wrap_raw
+2025-04-14 10:43:59,725 INFO    MainThread:83349 [wandb_run.py:_redirect():2371] Wrapping output streams.
+2025-04-14 10:43:59,725 INFO    MainThread:83349 [wandb_run.py:_redirect():2394] Redirects installed.
+2025-04-14 10:43:59,726 INFO    MainThread:83349 [wandb_init.py:init():1056] run started, returning control to user process
+2025-04-14 10:48:10,745 INFO    MsgRouterThr:83349 [mailbox.py:close():129] [no run ID] Closing mailbox, abandoning 1 handles.

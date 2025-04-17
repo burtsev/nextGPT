@@ -1,0 +1,139 @@
+Traceback (most recent call last):
+  File "/home/mburtsev/nextGPT/train.py", line 270, in <module>
+    losses = estimate_loss()
+  File "/home/mburtsev/.local/lib/python3.10/site-packages/torch/utils/_contextlib.py", line 116, in decorate_context
+    return func(*args, **kwargs)
+  File "/home/mburtsev/nextGPT/train.py", line 229, in estimate_loss
+    logits, loss = model(X, Y)
+  File "/home/mburtsev/.local/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1739, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/mburtsev/.local/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1750, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/mburtsev/.local/lib/python3.10/site-packages/torch/nn/parallel/distributed.py", line 1643, in forward
+    else self._run_ddp_forward(*inputs, **kwargs)
+  File "/home/mburtsev/.local/lib/python3.10/site-packages/torch/nn/parallel/distributed.py", line 1459, in _run_ddp_forward
+    return self.module(*inputs, **kwargs)  # type: ignore[index]
+  File "/home/mburtsev/.local/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1739, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/mburtsev/.local/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1750, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/mburtsev/.local/lib/python3.10/site-packages/torch/_dynamo/eval_frame.py", line 574, in _fn
+    return fn(*args, **kwargs)
+  File "/home/mburtsev/.local/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1739, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/mburtsev/.local/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1750, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/mburtsev/nextGPT/model.py", line 237, in forward
+    def forward(self, idx, targets=None):
+  File "/home/mburtsev/.local/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1739, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/mburtsev/.local/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1750, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/mburtsev/.local/lib/python3.10/site-packages/torch/_dynamo/eval_frame.py", line 745, in _fn
+    return fn(*args, **kwargs)
+  File "/home/mburtsev/.local/lib/python3.10/site-packages/torch/fx/graph_module.py", line 822, in call_wrapped
+    return self._wrapped_call(self, *args, **kwargs)
+  File "/home/mburtsev/.local/lib/python3.10/site-packages/torch/fx/graph_module.py", line 387, in __call__
+    return super(self.cls, obj).__call__(*args, **kwargs)  # type: ignore[misc]
+  File "/home/mburtsev/.local/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1739, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/mburtsev/.local/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1750, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "<eval_with_key>.90", line 206, in forward
+    submod_1 = self.compiled_submod_1(getitem, l_self_modules_transformer_modules_h_modules_0_modules_block_s2_modules_attn_modules_c_attn_parameters_weight_, l_self_modules_transformer_modules_h_modules_0_modules_block_s2_modules_attn_modules_c_proj_parameters_weight_, getitem_1, l_self_modules_transformer_modules_h_modules_0_modules_block_s2_modules_ln_2_parameters_weight_, l_self_modules_transformer_modules_h_modules_0_modules_block_s2_modules_mlp_modules_c_fc_parameters_weight_, l_self_modules_transformer_modules_h_modules_0_modules_block_s2_modules_mlp_modules_c_proj_parameters_weight_, getitem_2, l_self_modules_transformer_modules_h_modules_0_modules_mixing_ffn_s1_parameters_weight_, l_self_modules_transformer_modules_h_modules_0_modules_mixing_ffn_s1_parameters_bias_, l_self_modules_transformer_modules_h_modules_0_modules_mixing_ffn_s2_parameters_weight_, l_self_modules_transformer_modules_h_modules_0_modules_mixing_ffn_s2_parameters_bias_, l_self_modules_transformer_modules_h_modules_1_modules_block_s1_modules_ln_1_parameters_weight_, l_self_modules_transformer_modules_h_modules_1_modules_block_s1_modules_attn_modules_c_attn_parameters_weight_, l_self_modules_transformer_modules_h_modules_1_modules_block_s1_modules_attn_modules_c_proj_parameters_weight_, l_self_modules_transformer_modules_h_modules_1_modules_block_s1_modules_ln_2_parameters_weight_, l_self_modules_transformer_modules_h_modules_1_modules_block_s1_modules_mlp_modules_c_fc_parameters_weight_, l_self_modules_transformer_modules_h_modules_1_modules_block_s1_modules_mlp_modules_c_proj_parameters_weight_, l_self_modules_transformer_modules_h_modules_1_modules_block_s2_modules_ln_1_parameters_weight_, l_self_modules_transformer_modules_h_modules_1_modules_block_s2_modules_attn_modules_c_attn_parameters_weight_, l_self_modules_transformer_modules_h_modules_1_modules_block_s2_modules_attn_modules_c_proj_parameters_weight_, l_self_modules_transformer_modules_h_modules_1_modules_block_s2_modules_ln_2_parameters_weight_, l_self_modules_transformer_modules_h_modules_1_modules_block_s2_modules_mlp_modules_c_fc_parameters_weight_);  getitem = l_self_modules_transformer_modules_h_modules_0_modules_block_s2_modules_attn_modules_c_attn_parameters_weight_ = l_self_modules_transformer_modules_h_modules_0_modules_block_s2_modules_attn_modules_c_proj_parameters_weight_ = getitem_1 = l_self_modules_transformer_modules_h_modules_0_modules_block_s2_modules_ln_2_parameters_weight_ = l_self_modules_transformer_modules_h_modules_0_modules_block_s2_modules_mlp_modules_c_fc_parameters_weight_ = l_self_modules_transformer_modules_h_modules_0_modules_block_s2_modules_mlp_modules_c_proj_parameters_weight_ = getitem_2 = l_self_modules_transformer_modules_h_modules_0_modules_mixing_ffn_s1_parameters_weight_ = l_self_modules_transformer_modules_h_modules_0_modules_mixing_ffn_s1_parameters_bias_ = l_self_modules_transformer_modules_h_modules_0_modules_mixing_ffn_s2_parameters_weight_ = l_self_modules_transformer_modules_h_modules_0_modules_mixing_ffn_s2_parameters_bias_ = l_self_modules_transformer_modules_h_modules_1_modules_block_s1_modules_ln_1_parameters_weight_ = l_self_modules_transformer_modules_h_modules_1_modules_block_s1_modules_attn_modules_c_attn_parameters_weight_ = l_self_modules_transformer_modules_h_modules_1_modules_block_s1_modules_attn_modules_c_proj_parameters_weight_ = l_self_modules_transformer_modules_h_modules_1_modules_block_s1_modules_ln_2_parameters_weight_ = l_self_modules_transformer_modules_h_modules_1_modules_block_s1_modules_mlp_modules_c_fc_parameters_weight_ = l_self_modules_transformer_modules_h_modules_1_modules_block_s1_modules_mlp_modules_c_proj_parameters_weight_ = l_self_modules_transformer_modules_h_modules_1_modules_block_s2_modules_ln_1_parameters_weight_ = l_self_modules_transformer_modules_h_modules_1_modules_block_s2_modules_attn_modules_c_attn_parameters_weight_ = l_self_modules_transformer_modules_h_modules_1_modules_block_s2_modules_attn_modules_c_proj_parameters_weight_ = l_self_modules_transformer_modules_h_modules_1_modules_block_s2
+  File "/home/mburtsev/.local/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1739, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/mburtsev/.local/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1750, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/mburtsev/.local/lib/python3.10/site-packages/torch/_dynamo/backends/distributed.py", line 153, in forward
+    x = self.submod(*args)
+  File "/home/mburtsev/.local/lib/python3.10/site-packages/torch/_dynamo/eval_frame.py", line 745, in _fn
+    return fn(*args, **kwargs)
+  File "/home/mburtsev/.local/lib/python3.10/site-packages/torch/_functorch/aot_autograd.py", line 1184, in forward
+    return compiled_fn(full_args)
+  File "/home/mburtsev/.local/lib/python3.10/site-packages/torch/_functorch/_aot_autograd/runtime_wrappers.py", line 323, in runtime_wrapper
+    all_outs = call_func_at_runtime_with_args(
+  File "/home/mburtsev/.local/lib/python3.10/site-packages/torch/_functorch/_aot_autograd/utils.py", line 126, in call_func_at_runtime_with_args
+    out = normalize_as_list(f(args))
+  File "/home/mburtsev/.local/lib/python3.10/site-packages/torch/_functorch/_aot_autograd/runtime_wrappers.py", line 672, in inner_fn
+    outs = compiled_fn(args)
+  File "/home/mburtsev/.local/lib/python3.10/site-packages/torch/_functorch/_aot_autograd/runtime_wrappers.py", line 581, in wrapper
+    return compiled_fn(runtime_args)
+  File "/home/mburtsev/.local/lib/python3.10/site-packages/torch/_functorch/_aot_autograd/runtime_wrappers.py", line 490, in wrapper
+    return compiled_fn(runtime_args)
+  File "/home/mburtsev/.local/lib/python3.10/site-packages/torch/_inductor/output_code.py", line 466, in __call__
+    return self.current_callable(inputs)
+  File "/home/mburtsev/.local/lib/python3.10/site-packages/torch/_inductor/utils.py", line 2128, in run
+    return model(new_inputs)
+  File "/tmp/torchinductor_mburtsev/of/cofxycsusmlq5laclmaqrxotxwavt5xyoxxjroa67nohenw7fwti.py", line 821, in call
+    extern_kernels.mm(reinterpret_tensor(buf0, (98304, 432), (432, 1), 0), reinterpret_tensor(buf1, (432, 1296), (1, 432), 0), out=buf2)
+KeyboardInterrupt
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/home/mburtsev/nextGPT/train.py", line 270, in <module>
+[rank0]:     losses = estimate_loss()
+[rank0]:   File "/home/mburtsev/.local/lib/python3.10/site-packages/torch/utils/_contextlib.py", line 116, in decorate_context
+[rank0]:     return func(*args, **kwargs)
+[rank0]:   File "/home/mburtsev/nextGPT/train.py", line 229, in estimate_loss
+[rank0]:     logits, loss = model(X, Y)
+[rank0]:   File "/home/mburtsev/.local/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1739, in _wrapped_call_impl
+[rank0]:     return self._call_impl(*args, **kwargs)
+[rank0]:   File "/home/mburtsev/.local/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1750, in _call_impl
+[rank0]:     return forward_call(*args, **kwargs)
+[rank0]:   File "/home/mburtsev/.local/lib/python3.10/site-packages/torch/nn/parallel/distributed.py", line 1643, in forward
+[rank0]:     else self._run_ddp_forward(*inputs, **kwargs)
+[rank0]:   File "/home/mburtsev/.local/lib/python3.10/site-packages/torch/nn/parallel/distributed.py", line 1459, in _run_ddp_forward
+[rank0]:     return self.module(*inputs, **kwargs)  # type: ignore[index]
+[rank0]:   File "/home/mburtsev/.local/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1739, in _wrapped_call_impl
+[rank0]:     return self._call_impl(*args, **kwargs)
+[rank0]:   File "/home/mburtsev/.local/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1750, in _call_impl
+[rank0]:     return forward_call(*args, **kwargs)
+[rank0]:   File "/home/mburtsev/.local/lib/python3.10/site-packages/torch/_dynamo/eval_frame.py", line 574, in _fn
+[rank0]:     return fn(*args, **kwargs)
+[rank0]:   File "/home/mburtsev/.local/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1739, in _wrapped_call_impl
+[rank0]:     return self._call_impl(*args, **kwargs)
+[rank0]:   File "/home/mburtsev/.local/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1750, in _call_impl
+[rank0]:     return forward_call(*args, **kwargs)
+[rank0]:   File "/home/mburtsev/nextGPT/model.py", line 237, in forward
+[rank0]:     def forward(self, idx, targets=None):
+[rank0]:   File "/home/mburtsev/.local/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1739, in _wrapped_call_impl
+[rank0]:     return self._call_impl(*args, **kwargs)
+[rank0]:   File "/home/mburtsev/.local/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1750, in _call_impl
+[rank0]:     return forward_call(*args, **kwargs)
+[rank0]:   File "/home/mburtsev/.local/lib/python3.10/site-packages/torch/_dynamo/eval_frame.py", line 745, in _fn
+[rank0]:     return fn(*args, **kwargs)
+[rank0]:   File "/home/mburtsev/.local/lib/python3.10/site-packages/torch/fx/graph_module.py", line 822, in call_wrapped
+[rank0]:     return self._wrapped_call(self, *args, **kwargs)
+[rank0]:   File "/home/mburtsev/.local/lib/python3.10/site-packages/torch/fx/graph_module.py", line 387, in __call__
+[rank0]:     return super(self.cls, obj).__call__(*args, **kwargs)  # type: ignore[misc]
+[rank0]:   File "/home/mburtsev/.local/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1739, in _wrapped_call_impl
+[rank0]:     return self._call_impl(*args, **kwargs)
+[rank0]:   File "/home/mburtsev/.local/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1750, in _call_impl
+[rank0]:     return forward_call(*args, **kwargs)
+[rank0]:   File "<eval_with_key>.90", line 206, in forward
+[rank0]:   File "/home/mburtsev/.local/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1739, in _wrapped_call_impl
+[rank0]:     return self._call_impl(*args, **kwargs)
+[rank0]:   File "/home/mburtsev/.local/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1750, in _call_impl
+[rank0]:     return forward_call(*args, **kwargs)
+[rank0]:   File "/home/mburtsev/.local/lib/python3.10/site-packages/torch/_dynamo/backends/distributed.py", line 153, in forward
+[rank0]:     x = self.submod(*args)
+[rank0]:   File "/home/mburtsev/.local/lib/python3.10/site-packages/torch/_dynamo/eval_frame.py", line 745, in _fn
+[rank0]:     return fn(*args, **kwargs)
+[rank0]:   File "/home/mburtsev/.local/lib/python3.10/site-packages/torch/_functorch/aot_autograd.py", line 1184, in forward
+[rank0]:     return compiled_fn(full_args)
+[rank0]:   File "/home/mburtsev/.local/lib/python3.10/site-packages/torch/_functorch/_aot_autograd/runtime_wrappers.py", line 323, in runtime_wrapper
+[rank0]:     all_outs = call_func_at_runtime_with_args(
+[rank0]:   File "/home/mburtsev/.local/lib/python3.10/site-packages/torch/_functorch/_aot_autograd/utils.py", line 126, in call_func_at_runtime_with_args
+[rank0]:     out = normalize_as_list(f(args))
+[rank0]:   File "/home/mburtsev/.local/lib/python3.10/site-packages/torch/_functorch/_aot_autograd/runtime_wrappers.py", line 672, in inner_fn
+[rank0]:     outs = compiled_fn(args)
+[rank0]:   File "/home/mburtsev/.local/lib/python3.10/site-packages/torch/_functorch/_aot_autograd/runtime_wrappers.py", line 581, in wrapper
+[rank0]:     return compiled_fn(runtime_args)
+[rank0]:   File "/home/mburtsev/.local/lib/python3.10/site-packages/torch/_functorch/_aot_autograd/runtime_wrappers.py", line 490, in wrapper
+[rank0]:     return compiled_fn(runtime_args)
+[rank0]:   File "/home/mburtsev/.local/lib/python3.10/site-packages/torch/_inductor/output_code.py", line 466, in __call__
+[rank0]:     return self.current_callable(inputs)
+[rank0]:   File "/home/mburtsev/.local/lib/python3.10/site-packages/torch/_inductor/utils.py", line 2128, in run
+[rank0]:     return model(new_inputs)
+[rank0]:   File "/tmp/torchinductor_mburtsev/of/cofxycsusmlq5laclmaqrxotxwavt5xyoxxjroa67nohenw7fwti.py", line 821, in call
+[rank0]:     extern_kernels.mm(reinterpret_tensor(buf0, (98304, 432), (432, 1), 0), reinterpret_tensor(buf1, (432, 1296), (1, 432), 0), out=buf2)
+[rank0]: KeyboardInterrupt

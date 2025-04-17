@@ -4,13 +4,15 @@
 
 wandb_log = True
 wandb_project = 'nextGPT-OWT'
-wandb_run_name='gpt2-124M'
+wandb_run_name='GPT-d432-gpt2-124M'
 
 # these make the total batch size be ~0.5M
 # 12 batch size * 1024 block size * 5 gradaccum * 8 GPUs = 491,520
-batch_size = 12
+batch_size = 96
 block_size = 1024
-gradient_accumulation_steps = 1 #5 * 8
+gradient_accumulation_steps = 5 #5 * 8
+block_type = 'default'  # 'default' for Block, 'cortex' for CortexBlock, 'cortex_x' for CortexBlock with two paths
+n_embd = 432
 
 # this makes total number of tokens be 300B
 max_iters = 600000

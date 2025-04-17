@@ -1,0 +1,36 @@
+step 0: train loss 10.9894, val loss 10.9903
+iter 0: loss 10.9923, time 37591.15ms, mfu -100.00%
+iter 10: loss 10.2999, time 1084.25ms, mfu 124.20%
+iter 20: loss 9.7097, time 1080.63ms, mfu 124.24%
+iter 30: loss 9.4863, time 1082.97ms, mfu 124.25%
+iter 40: loss 9.2564, time 1081.30ms, mfu 124.28%
+iter 50: loss 9.0157, time 1084.96ms, mfu 124.26%
+iter 60: loss 8.7882, time 1085.15ms, mfu 124.24%
+iter 70: loss 8.6276, time 1084.06ms, mfu 124.24%
+iter 80: loss 8.4080, time 1086.38ms, mfu 124.21%
+iter 90: loss 8.1523, time 1083.65ms, mfu 124.22%
+iter 100: loss 8.0182, time 1081.17ms, mfu 124.25%
+iter 110: loss 7.6856, time 1083.74ms, mfu 124.25%
+iter 120: loss 7.5037, time 1084.30ms, mfu 124.24%
+iter 130: loss 7.3441, time 1082.62ms, mfu 124.26%
+iter 140: loss 7.2759, time 1083.65ms, mfu 124.26%
+Traceback (most recent call last):
+  File "/home/mburtsev/nextGPT/train.py", line 312, in <module>
+    scaler.scale(loss).backward()
+  File "/home/mburtsev/.local/lib/python3.10/site-packages/torch/_tensor.py", line 626, in backward
+    torch.autograd.backward(
+  File "/home/mburtsev/.local/lib/python3.10/site-packages/torch/autograd/__init__.py", line 347, in backward
+    _engine_run_backward(
+  File "/home/mburtsev/.local/lib/python3.10/site-packages/torch/autograd/graph.py", line 823, in _engine_run_backward
+    return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+KeyboardInterrupt
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/home/mburtsev/nextGPT/train.py", line 312, in <module>
+[rank0]:     scaler.scale(loss).backward()
+[rank0]:   File "/home/mburtsev/.local/lib/python3.10/site-packages/torch/_tensor.py", line 626, in backward
+[rank0]:     torch.autograd.backward(
+[rank0]:   File "/home/mburtsev/.local/lib/python3.10/site-packages/torch/autograd/__init__.py", line 347, in backward
+[rank0]:     _engine_run_backward(
+[rank0]:   File "/home/mburtsev/.local/lib/python3.10/site-packages/torch/autograd/graph.py", line 823, in _engine_run_backward
+[rank0]:     return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+[rank0]: KeyboardInterrupt

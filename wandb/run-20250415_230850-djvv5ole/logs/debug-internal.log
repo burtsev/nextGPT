@@ -1,0 +1,15 @@
+{"time":"2025-04-15T23:08:50.917502718Z","level":"INFO","msg":"stream: starting","core version":"0.19.9","symlink path":"/home/mburtsev/nextGPT/wandb/run-20250415_230850-djvv5ole/logs/debug-core.log"}
+{"time":"2025-04-15T23:08:51.190214397Z","level":"INFO","msg":"created new stream","id":"djvv5ole"}
+{"time":"2025-04-15T23:08:51.190419605Z","level":"INFO","msg":"stream: started","id":"djvv5ole"}
+{"time":"2025-04-15T23:08:51.190463891Z","level":"INFO","msg":"handler: started","stream_id":"djvv5ole"}
+{"time":"2025-04-15T23:08:51.190461769Z","level":"INFO","msg":"writer: Do: started","stream_id":"djvv5ole"}
+{"time":"2025-04-15T23:08:51.190475072Z","level":"INFO","msg":"sender: started","stream_id":"djvv5ole"}
+{"time":"2025-04-15T23:08:51.454143399Z","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-04-15T23:09:19.561022914Z","level":"INFO","msg":"stream: closing","id":"djvv5ole"}
+{"time":"2025-04-15T23:09:19.561040284Z","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-04-15T23:09:19.561104881Z","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-04-15T23:09:20.70567145Z","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-04-15T23:09:20.949981775Z","level":"INFO","msg":"handler: closed","stream_id":"djvv5ole"}
+{"time":"2025-04-15T23:09:20.95001151Z","level":"INFO","msg":"writer: Close: closed","stream_id":"djvv5ole"}
+{"time":"2025-04-15T23:09:20.950023968Z","level":"INFO","msg":"sender: closed","stream_id":"djvv5ole"}
+{"time":"2025-04-15T23:09:20.95005829Z","level":"INFO","msg":"stream: closed","id":"djvv5ole"}

@@ -133,7 +133,11 @@ class CortexBlock(nn.Module):
         # Initialize two Blocks for s1 and s2
         self.block_s1 = Block(config_s1)
         self.block_s2 = Block(config_s2)
-        
+
+        self.ln_3 = LayerNorm(config.n_embd, bias=config.bias)
+
+        self.ReLU_s1 = nn.ReLU()
+        self.ReLU_s2 = nn.ReLU()
         # Mixing FFN for s1 and s2
         self.mixing_ffn_s1 = nn.Linear(config.n_embd, self.split_dim)
         self.mixing_ffn_s2 = nn.Linear(config.n_embd, self.split_dim)
@@ -148,8 +152,11 @@ class CortexBlock(nn.Module):
         
         # Step 3: Concatenate and Apply FFN separately
         s = torch.cat((s1, s2), dim=-1)
-        s1 = s1 + self.mixing_ffn_s1(s)
-        s2 = s2 + self.mixing_ffn_s2(s)
+        
+        s = self.ln_3(s)
+
+        s1 = s1 + self.mixing_ffn_s1(self.ReLU_s1(s))
+        s2 = s2 + self.mixing_ffn_s2(self.ReLU_s2(s))
         
         # Concatenate streams back
         return torch.cat((s1, s2), dim=-1)

@@ -1,0 +1,7 @@
+{"time":"2025-04-14T11:01:19.166539506Z","level":"INFO","msg":"stream: starting","core version":"0.19.9","symlink path":"/home/mburtsev/nextGPT/wandb/run-20250414_110119-lgvdgc2d/logs/debug-core.log"}
+{"time":"2025-04-14T11:01:19.433415869Z","level":"INFO","msg":"created new stream","id":"lgvdgc2d"}
+{"time":"2025-04-14T11:01:19.433448506Z","level":"INFO","msg":"stream: started","id":"lgvdgc2d"}
+{"time":"2025-04-14T11:01:19.433555784Z","level":"INFO","msg":"writer: Do: started","stream_id":"lgvdgc2d"}
+{"time":"2025-04-14T11:01:19.433592263Z","level":"INFO","msg":"handler: started","stream_id":"lgvdgc2d"}
+{"time":"2025-04-14T11:01:19.433847922Z","level":"INFO","msg":"sender: started","stream_id":"lgvdgc2d"}
+{"time":"2025-04-14T11:01:19.662876796Z","level":"INFO","msg":"Starting system monitor"}

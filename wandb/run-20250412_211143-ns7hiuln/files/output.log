@@ -1,0 +1,44 @@
+step 0: train loss 10.9893, val loss 10.9905
+iter 0: loss 10.9856, time 42310.49ms, mfu -100.00%
+iter 10: loss 10.3216, time 161.30ms, mfu 125.23%
+iter 20: loss 9.7810, time 163.60ms, mfu 125.05%
+iter 30: loss 9.5183, time 163.66ms, mfu 124.89%
+iter 40: loss 9.3433, time 163.79ms, mfu 124.73%
+iter 50: loss 9.1280, time 163.27ms, mfu 124.63%
+iter 60: loss 8.9023, time 164.84ms, mfu 124.42%
+iter 70: loss 8.7899, time 161.66ms, mfu 124.47%
+iter 80: loss 8.5825, time 164.36ms, mfu 124.32%
+iter 90: loss 8.2640, time 162.85ms, mfu 124.29%
+iter 100: loss 8.0830, time 210.25ms, mfu 121.47%
+iter 110: loss 7.8466, time 164.43ms, mfu 121.60%
+iter 120: loss 7.6496, time 162.06ms, mfu 121.91%
+iter 130: loss 7.4548, time 163.86ms, mfu 122.04%
+iter 140: loss 7.3151, time 162.84ms, mfu 122.24%
+iter 150: loss 7.2284, time 164.91ms, mfu 122.27%
+iter 160: loss 7.1262, time 163.92ms, mfu 122.36%
+iter 170: loss 6.9995, time 163.76ms, mfu 122.46%
+iter 180: loss 6.8799, time 164.23ms, mfu 122.51%
+iter 190: loss 6.9436, time 163.73ms, mfu 122.60%
+iter 200: loss 6.7935, time 209.61ms, mfu 119.98%
+iter 210: loss 6.6624, time 163.39ms, mfu 120.34%
+iter 220: loss 6.7335, time 161.76ms, mfu 120.79%
+Traceback (most recent call last):
+  File "/home/mburtsev/nextGPT/train.py", line 312, in <module>
+    scaler.scale(loss).backward()
+  File "/home/mburtsev/.local/lib/python3.10/site-packages/torch/_tensor.py", line 626, in backward
+    torch.autograd.backward(
+  File "/home/mburtsev/.local/lib/python3.10/site-packages/torch/autograd/__init__.py", line 347, in backward
+    _engine_run_backward(
+  File "/home/mburtsev/.local/lib/python3.10/site-packages/torch/autograd/graph.py", line 823, in _engine_run_backward
+    return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+KeyboardInterrupt
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/home/mburtsev/nextGPT/train.py", line 312, in <module>
+[rank0]:     scaler.scale(loss).backward()
+[rank0]:   File "/home/mburtsev/.local/lib/python3.10/site-packages/torch/_tensor.py", line 626, in backward
+[rank0]:     torch.autograd.backward(
+[rank0]:   File "/home/mburtsev/.local/lib/python3.10/site-packages/torch/autograd/__init__.py", line 347, in backward
+[rank0]:     _engine_run_backward(
+[rank0]:   File "/home/mburtsev/.local/lib/python3.10/site-packages/torch/autograd/graph.py", line 823, in _engine_run_backward
+[rank0]:     return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+[rank0]: KeyboardInterrupt

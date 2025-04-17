@@ -1,0 +1,7 @@
+{"time":"2025-04-17T15:38:53.929814432Z","level":"INFO","msg":"stream: starting","core version":"0.19.9","symlink path":"/home/mburtsev/nextGPT/wandb/run-20250417_153853-17jnm55b/logs/debug-core.log"}
+{"time":"2025-04-17T15:38:54.19628698Z","level":"INFO","msg":"created new stream","id":"17jnm55b"}
+{"time":"2025-04-17T15:38:54.19642603Z","level":"INFO","msg":"stream: started","id":"17jnm55b"}
+{"time":"2025-04-17T15:38:54.196460773Z","level":"INFO","msg":"handler: started","stream_id":"17jnm55b"}
+{"time":"2025-04-17T15:38:54.196471331Z","level":"INFO","msg":"writer: Do: started","stream_id":"17jnm55b"}
+{"time":"2025-04-17T15:38:54.196509957Z","level":"INFO","msg":"sender: started","stream_id":"17jnm55b"}
+{"time":"2025-04-17T15:38:54.462840654Z","level":"INFO","msg":"Starting system monitor"}

@@ -1,0 +1,15 @@
+{"time":"2025-04-14T10:18:51.414893084Z","level":"INFO","msg":"stream: starting","core version":"0.19.9","symlink path":"/home/mburtsev/nextGPT/wandb/run-20250414_101851-jnarrudj/logs/debug-core.log"}
+{"time":"2025-04-14T10:18:51.680181586Z","level":"INFO","msg":"created new stream","id":"jnarrudj"}
+{"time":"2025-04-14T10:18:51.680281236Z","level":"INFO","msg":"stream: started","id":"jnarrudj"}
+{"time":"2025-04-14T10:18:51.680335798Z","level":"INFO","msg":"sender: started","stream_id":"jnarrudj"}
+{"time":"2025-04-14T10:18:51.680325016Z","level":"INFO","msg":"handler: started","stream_id":"jnarrudj"}
+{"time":"2025-04-14T10:18:51.680320587Z","level":"INFO","msg":"writer: Do: started","stream_id":"jnarrudj"}
+{"time":"2025-04-14T10:18:51.879466553Z","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-04-14T10:21:36.99561039Z","level":"INFO","msg":"stream: closing","id":"jnarrudj"}
+{"time":"2025-04-14T10:21:36.995626931Z","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-04-14T10:21:36.995684031Z","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-04-14T10:21:38.245636668Z","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-04-14T10:21:38.437559653Z","level":"INFO","msg":"handler: closed","stream_id":"jnarrudj"}
+{"time":"2025-04-14T10:21:38.437605873Z","level":"INFO","msg":"sender: closed","stream_id":"jnarrudj"}
+{"time":"2025-04-14T10:21:38.437596931Z","level":"INFO","msg":"writer: Close: closed","stream_id":"jnarrudj"}
+{"time":"2025-04-14T10:21:38.437691984Z","level":"INFO","msg":"stream: closed","id":"jnarrudj"}

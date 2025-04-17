@@ -1,0 +1,17 @@
+{"time":"2025-04-14T12:38:28.173476839Z","level":"INFO","msg":"stream: starting","core version":"0.19.9","symlink path":"/home/mburtsev/nextGPT/wandb/run-20250414_123828-h5nq4oa9/logs/debug-core.log"}
+{"time":"2025-04-14T12:38:28.438989653Z","level":"INFO","msg":"created new stream","id":"h5nq4oa9"}
+{"time":"2025-04-14T12:38:28.439018528Z","level":"INFO","msg":"stream: started","id":"h5nq4oa9"}
+{"time":"2025-04-14T12:38:28.43902983Z","level":"INFO","msg":"writer: Do: started","stream_id":"h5nq4oa9"}
+{"time":"2025-04-14T12:38:28.439065024Z","level":"INFO","msg":"sender: started","stream_id":"h5nq4oa9"}
+{"time":"2025-04-14T12:38:28.439112292Z","level":"INFO","msg":"handler: started","stream_id":"h5nq4oa9"}
+{"time":"2025-04-14T12:38:28.66159579Z","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-04-14T19:24:30.001062006Z","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/graphql\": context deadline exceeded"}
+{"time":"2025-04-14T19:27:30.003181248Z","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/graphql\": context deadline exceeded (Client.Timeout exceeded while awaiting headers)"}
+{"time":"2025-04-15T23:08:29.618054834Z","level":"INFO","msg":"stream: closing","id":"h5nq4oa9"}
+{"time":"2025-04-15T23:08:29.618074939Z","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-04-15T23:08:29.61817718Z","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-04-15T23:08:30.681001709Z","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-04-15T23:08:30.904926164Z","level":"INFO","msg":"handler: closed","stream_id":"h5nq4oa9"}
+{"time":"2025-04-15T23:08:30.904959079Z","level":"INFO","msg":"sender: closed","stream_id":"h5nq4oa9"}
+{"time":"2025-04-15T23:08:30.904950024Z","level":"INFO","msg":"writer: Close: closed","stream_id":"h5nq4oa9"}
+{"time":"2025-04-15T23:08:30.905035477Z","level":"INFO","msg":"stream: closed","id":"h5nq4oa9"}

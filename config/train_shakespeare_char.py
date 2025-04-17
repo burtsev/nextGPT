@@ -11,7 +11,7 @@ always_save_checkpoint = False
 
 wandb_log = True # override via command line if you like
 wandb_project = 'nextGPT'
-wandb_run_name = 'CTXX-d456-bls512-char'
+wandb_run_name = 'CTXX2-d456-bls512-char'
 
 dataset = 'shakespeare_char'
 gradient_accumulation_steps = 1
